@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+*{
+  box-sizing: border-box;
+}
+body{
+    background: linear-gradient(-45deg, #c8f3e9, #f3dfb2, #ece0c8, #f3d6c8);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+.enter-img{
+  background: linear-gradient(-45deg, #f3efc8, #ebf1cc, #ece0c8, #f3d6c8);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+
+/* navbar */
+
+.main-title{
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 0.1em;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.navbar-brand{
+    padding-left: 2em;
+}
+
+/* about */
+
+.whoIam{
+    background-color: rgba(255, 255, 255, 0.822);
+    padding: 0.5em;
+    border-radius: 4px;
+}
+
+.about{
+    padding: 10%;
+}
+
+.h-about{
+    text-align: center;
+    padding: 0.5em;
+    text-transform: uppercase;
+}
+
+/* Card */
+
+
+.title{
+    color: #555;
+    text-align: left;
+    padding-top: 1em;
+}
+
+
+.card a{
+    text-decoration: none;
+    color: #000;
+    padding-bottom: 1em;
+}
+
+.card a:hover {
+    color: rgb(77, 72, 72);
+}
+
+.card h4{
+  font-size: 20px;
+}
+
+@media (min-width:1065px) and (max-width:1450px) {
+  .card h4{
+    font-size: 85%;
+  }
+  .title{
+    font-size: 85%;
+  }
+}
+
+@media (min-width:885px) and (max-width:1065px) {
+  .card h4{
+    font-size: 70%;
+  }
+  .title{
+    font-size: 70%;
+  }
+}
+
+
+@media (min-width:760px) and (max-width:885px) {
+  .card h4{
+    font-size: 50%;
+  }
+  .title{
+    font-size: 50%;
+  }
+} 
+
+/* Slider */
+
+/* scroll animation */
+.scroll-ani{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding-bottom: 10em;
+}
+.box {
+  background-color: #c8f3e9;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  transform: translateX(450%);
+  transition: transform 0.4s ease;
+}
+
+.box:nth-of-type(even) {
+  transform: translateX(-450%);
+}
+
+.box.show {
+  transform: translateX(0);
+}
+
+.box h6 {
+
+  transform: rotate(270deg);
+}
+
+
+.box p {
+  padding: 5px;
+}
+
+
+/* card modal */
+#myImg {
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+#myImg:hover { /* Modify this according to your need */
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+ }
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  padding-top: 100px; /* Location of the box */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+
+/* Add Animation */
+.modal-content{  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.9s;
+  animation-name: zoom;
+  animation-duration: 0.9s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+
+
+/* Form */
+
+.form-p{
+  font-weight: bold;
+} 
+
+.form-{
+  padding: 1rem 3rem;
+  background: rgba(255, 255, 255, 0.856);
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.form-btn{
+  margin: 3rem auto 3em 35%;
+  width: 30%;
+}
+
+
+/* Mesaj gönder */
+
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    left: 28px;
+    width: 280px;
+  }
+  
+  /* The popup chat - hidden by default */
+  .chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+  
+  /* Full-width textarea */
+  .form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+  }
+  
+  /* When the textarea gets focus, do something */
+  .form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/send button */
+  .form-container .btn {
+    background-color: #67a0aa;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: red;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+
+
+    #left-col
+  {
+    background: white;
+  }
+  #right-col
+  {
+    background: white;
+  }
+
+
+  .up {
+    display: none;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgba(237, 173, 100, 0.829);
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+}
+
+.up:hover{
+  cursor: pointer;
+  background-color: rgba(211, 185, 155, 0.548);;
+}
+
+  .up a{
+    font-size: 35px;
+    color: white !important;
+    
+  }
+
+  .show-arrow {
+    display: block;
+  }
+
+  .lost{
+    display: none;
+  }
+  /* footer */
+/* footer style start
+	============================================================================================ */
+  .footer-area {
+    background: #fd7d056e;
+    padding-top: 60px;
+  }
+  
+  @media (min-width: 1000px) {
+    .footer-area {
+      padding-top: 110px;
+    }
+  }
+  
+  .footer-area .footer-nav li {
+    margin-top: 3px;
+  }
+  
+  .footer-area .footer-nav li a:hover {
+    color: #5148fc;
+  }
+  
+  .footer-area h6 {
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.808);
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .single-footer-widget {
+    color: rgb(199, 195, 195);
+  }
+  
+
+  
+  @media (max-width: 960px) {
+    .single-footer-widget .newsletter {
+      padding-bottom: 40px;
+    }
+  }
+  
+  .single-footer-widget p {
+    color: #ebe2e2e1;
+  }
+  
+  .single-footer-widget ul li {
+    margin-bottom: 10px;
+  }
+  
+  .single-footer-widget ul li a {
+    text-decoration: none;
+    color: #ebe2e2e1;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .single-footer-widget ul li a:hover {
+    color: #6059f6;
+  }
+  
+  .footer-text a, .footer-text i {
+    color: #2c85b8;
+  }
+  
+  /* footer style end
+    ============================================================================================ */
